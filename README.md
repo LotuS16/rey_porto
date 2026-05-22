@@ -1,4 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cretivox Internship Endurance Test - Web Application
+
+Project ini adalah aplikasi web berbasis Next.js yang dikembangkan khusus untuk memenuhi kebutuhan tugas atau seleksi Cretivox Internship Endurance Test. Aplikasi ini mentransformasikan halaman landing page portfolio interaktif yang awalnya berbentuk single-file HTML konvensional menjadi sebuah aplikasi modern yang modular, terstruktur, dan siap untuk dikembangkan lebih lanjut dalam skala besar menggunakan Next.js App Router.
+
+Fokus utama dari migrasi arsitektur ini adalah memisahkan urusan tampilan (User Interface), logika bisnis (API fetch), penataan gaya (CSS), dan animasi (GSAP) agar kode tetap bersih, mudah dirawat, dan scalable.
+
+## Fitur Utama
+
+Aplikasi ini dilengkapi dengan beberapa fitur esensial yang mendukung fungsionalitas dan aspek estetikanya:
+
+1. Autentikasi Login
+Halaman depan bertindak sebagai pelindung konten utama. Pengguna diwajibkan memasukkan kredensial yang valid sebelum diberikan izin untuk mengeksplorasi portfolio. Layar login ini terintegrasi langsung dengan verifikasi API pihak ketiga secara real-time.
+
+2. Landing Page & Portfolio Interaktif
+Setelah berhasil masuk, pengguna disuguhkan dengan konten portfolio utama yang mencakup seksi Hero dengan teks paralaks, teks berjalan otomatis (Marquee Grid), galeri foto dengan aspek rasio sinematik (9:16), seksi informasi biografi, hingga kutipan personal di bagian penutup.
+
+3. Kursor Kustom Dinamis
+Aplikasi menggantikan kursor bawaan peramban dengan komponen kursor kustom yang terdiri dari titik pusat dan lingkaran pelacak (ring tracking). Lingkaran kursor ini memiliki efek perlambatan (easing) saat mengikuti pergerakan mouse dan akan membesar secara otomatis ketika berada di atas elemen interaktif seperti tombol atau tautan.
+
+4. Animasi Lanjutan dengan GSAP dan ScrollTrigger
+Seluruh seksi di dalam konten utama memanfaatkan pustaka GSAP untuk mengatur urutan kemunculan elemen (staggered animation) saat situs pertama kali dimuat. Selain itu, fitur ScrollTrigger digunakan untuk memicu animasi secara presisi berdasarkan posisi gulir layar pengguna.
+
+5. Lapisan Efek Noise Estetis
+Terdapat overlay tekstur noise menggunakan SVG yang berjalan secara konstan di latar belakang aplikasi. Efek ini memberikan impresi visual yang lebih hidup, analog, dan menyatu dengan tema desain gelap yang diusung.
+
+## Arsitektur Project (Modular Architecture)
+
+Untuk menjaga kebersihan kode dan memudahkan proses kolaborasi atau pengembangan jangka panjang, project ini menerapkan struktur arsitektur berbasis modular (Feature/Component-Based Layout) di dalam App Router Next.js. Pemisahan tugas dilakukan secara ketat dengan pembagian direktori sebagai berikut:
+
+```text
+src/
+├── app/
+│   ├── globals.css        # Berisi seluruh konfigurasi gaya, variabel warna, efek noise, dan kursor
+│   ├── layout.tsx         # Setup font eksternal (Bebas Neue, Cormorant Garamond, DM Mono) dan pembungkus root
+│   └── page.tsx           # Halaman utama yang mengelola state autentikasi dan inisialisasi urutan animasi
+├── components/
+│   ├── sections/
+│   │   ├── LoginScreen.tsx # Komponen mandiri yang menangani UI dan logika interaksi form login
+│   │   └── MainContent.tsx # Komponen yang menampung seluruh elemen visual portfolio setelah login sukses
+│   └── ui/
+│       └── CustomCursor.tsx # Komponen terisolasi untuk melacak gerakan mouse dan merender kursor kustom
+└── services/
+    └── auth.service.ts    # Lapisan abstraksi data untuk menangani komunikasi HTTP request ke API autentikasi
 
 ## Getting Started
 
@@ -15,22 +57,3 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
