@@ -51,7 +51,7 @@ Sebelum memulai, pastikan perangkat lunak berikut sudah terinstal di komputer:
 Node.js (versi 18.x atau yang lebih baru direkomendasikan)
 npm (bawaan dari Node.js) atau yarn
 
-#Langkah Instalasi
+# Langkah Instalasi
 Ekstrak atau klon repositori project ini ke direktori lokal Anda.
 Buka terminal atau command prompt, lalu arahkan ke folder root project.
 Jalankan perintah berikut untuk menginstal semua pustaka dan dependensi yang diperlukan (termasuk Next.js, GSAP, dan TypeScript):
