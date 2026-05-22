@@ -41,7 +41,7 @@ src/
 │       └── CustomCursor.tsx # Komponen terisolasi untuk melacak gerakan mouse dan merender kursor kustom
 └── services/
     └── auth.service.ts    # Lapisan abstraksi data untuk menangani komunikasi HTTP request ke API autentikasi
-
+```
 ## Cara Menjalankan Project
 Ikuti langkah di bawah untuk menjalankan aplikasi di lokal device.
 
@@ -64,6 +64,6 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+
 
 buka [http://localhost:3000](http://localhost:3000) dengan browser kamu untuk melihat hasilnya.
