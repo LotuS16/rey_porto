@@ -45,7 +45,7 @@ src/
 ## Cara Menjalankan Project
 Ikuti langkah di bawah untuk menjalankan aplikasi di lokal device.
 
-# Prasyarat
+Prasyarat
 Sebelum memulai, pastikan perangkat lunak berikut sudah terinstal di komputer:
 
 Node.js (versi 18.x atau yang lebih baru direkomendasikan)
@@ -57,13 +57,9 @@ Buka terminal atau command prompt, lalu arahkan ke folder root project.
 Jalankan perintah berikut untuk menginstal semua pustaka dan dependensi yang diperlukan (termasuk Next.js, GSAP, dan TypeScript):
 
 # bash
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
 
 
 buka [http://localhost:3000](http://localhost:3000) dengan browser kamu untuk melihat hasilnya.
