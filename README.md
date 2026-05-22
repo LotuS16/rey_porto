@@ -42,11 +42,21 @@ src/
 └── services/
     └── auth.service.ts    # Lapisan abstraksi data untuk menangani komunikasi HTTP request ke API autentikasi
 
-## Getting Started
+## Cara Menjalankan Project
+Ikuti langkah di bawah untuk menjalankan aplikasi di lokal device.
 
-First, run the development server:
+# Prasyarat
+Sebelum memulai, pastikan perangkat lunak berikut sudah terinstal di komputer:
 
-```bash
+Node.js (versi 18.x atau yang lebih baru direkomendasikan)
+npm (bawaan dari Node.js) atau yarn
+
+#Langkah Instalasi
+Ekstrak atau klon repositori project ini ke direktori lokal Anda.
+Buka terminal atau command prompt, lalu arahkan ke folder root project.
+Jalankan perintah berikut untuk menginstal semua pustaka dan dependensi yang diperlukan (termasuk Next.js, GSAP, dan TypeScript):
+
+# bash
 npm run dev
 # or
 yarn dev
@@ -56,4 +66,4 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+buka [http://localhost:3000](http://localhost:3000) dengan browser kamu untuk melihat hasilnya.
