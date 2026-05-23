@@ -1,0 +1,100 @@
+.page {
+  min-height:      100vh;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  background:      var(--bg);
+}
+
+.card {
+  width:     100%;
+  max-width: 420px;
+  padding:   0 32px;
+}
+
+.eyebrow {
+  font-family:    var(--font-mono), monospace;
+  font-size:      10px;
+  letter-spacing: 0.22em;
+  color:          var(--muted);
+  text-transform: uppercase;
+  margin-bottom:  48px;
+}
+
+.heading {
+  font-family:   var(--font-bebas), sans-serif;
+  font-size:     clamp(52px, 11vw, 88px);
+  line-height:   0.88;
+  color:         var(--cream);
+  margin-bottom: 56px;
+}
+
+.headingAccent {
+  color: var(--gold);
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.label {
+  display:        block;
+  font-family:    var(--font-mono), monospace;
+  font-size:      9px;
+  letter-spacing: 0.18em;
+  color:          var(--muted);
+  text-transform: uppercase;
+  margin-bottom:  10px;
+}
+
+.input {
+  width:         100%;
+  background:    transparent;
+  border:        none;
+  border-bottom: 1px solid var(--muted);
+  padding:       10px 0;
+  color:         var(--cream);
+  font-family:   var(--font-serif), serif;
+  font-size:     20px;
+  outline:       none;
+  transition:    border-color 0.3s;
+  cursor:        none;
+}
+
+.input:focus {
+  border-bottom-color: var(--gold);
+}
+
+.btn {
+  width:          100%;
+  margin-top:     44px;
+  padding:        18px 24px;
+  background:     var(--gold);
+  color:          var(--bg);
+  font-family:    var(--font-mono), monospace;
+  font-size:      11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border:         none;
+  cursor:         none;
+  transition:     opacity 0.25s;
+}
+
+.btn:hover    { opacity: 0.82; }
+.btn:disabled { opacity: 0.38; }
+
+.error {
+  font-family: var(--font-mono), monospace;
+  font-size:   10px;
+  color:       var(--red);
+  margin-top:  14px;
+  min-height:  18px;
+}
+
+.hint {
+  font-family:    var(--font-mono), monospace;
+  font-size:      9px;
+  color:          var(--muted);
+  margin-top:     10px;
+  letter-spacing: 0.1em;
+}

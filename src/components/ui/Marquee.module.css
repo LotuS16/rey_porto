@@ -1,0 +1,36 @@
+.wrap {
+  overflow:     hidden;
+  padding:      52px 0;
+  border-top:   1px solid rgba(90, 82, 72, 0.25);
+  border-bottom: 1px solid rgba(90, 82, 72, 0.25);
+}
+
+.track {
+  display:    flex;
+  gap:        0;
+  white-space: nowrap;
+  /* 'marquee' keyframe defined in globals.css */
+  animation:  marquee 22s linear infinite;
+}
+
+.word {
+  font-family:       var(--font-bebas), sans-serif;
+  font-size:         72px;
+  padding:           0 48px;
+  letter-spacing:    0.04em;
+  color:             transparent;
+  -webkit-text-stroke: 1px rgba(200, 160, 85, 0.28);
+  /* Alternate filled words via :nth-child */
+}
+
+.word:nth-child(even) {
+  color:             var(--gold);
+  -webkit-text-stroke: none;
+  padding:           0 20px;
+  font-size:         52px;
+}
+
+@media (max-width: 768px) {
+  .word          { font-size: 48px; }
+  .word:nth-child(even) { font-size: 36px; }
+}
