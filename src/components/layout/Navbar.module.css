@@ -1,0 +1,33 @@
+.nav {
+  position:        fixed;
+  top:             0;
+  left:            0;
+  right:           0;
+  padding:         28px 48px;
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  z-index:         200;
+}
+
+.logo {
+  font-family:    var(--font-bebas), sans-serif;
+  font-size:      18px;
+  letter-spacing: 0.12em;
+  color:          var(--cream);
+}
+
+.pill {
+  font-family:    var(--font-mono), monospace;
+  font-size:      9px;
+  letter-spacing: 0.18em;
+  color:          var(--gold);
+  text-transform: uppercase;
+  border:         1px solid var(--muted);
+  padding:        7px 14px;
+}
+
+@media (max-width: 640px) {
+  .nav     { padding: 20px 24px; }
+  .pill    { display: none; }
+}
