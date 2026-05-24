@@ -1,65 +1,44 @@
-# Cretivox Internship Endurance Test - Web Application
+# Cretivox Internship Experience - Endurance Test (Front-end Developer)
 
-Project ini adalah aplikasi web berbasis Next.js yang dikembangkan khusus untuk memenuhi kebutuhan tugas atau seleksi Cretivox Internship Endurance Test. Aplikasi ini mentransformasikan halaman landing page portfolio interaktif yang awalnya berbentuk single-file HTML konvensional menjadi sebuah aplikasi modern yang modular, terstruktur, dan siap untuk dikembangkan lebih lanjut dalam skala besar menggunakan Next.js App Router.
+Repository ini berisi kode sumber untuk website personal branding/portofolio interaktif yang dibangun sebagai pemenuhan tugas **Endurance Test** untuk posisi **Front-end Developer** di Cretivox. Proyek ini berfokus pada performa, animasi modern, interaktivitas, dan integrasi API.
 
-Fokus utama dari migrasi arsitektur ini adalah memisahkan urusan tampilan (User Interface), logika bisnis (API fetch), penataan gaya (CSS), dan animasi (GSAP) agar kode tetap bersih, mudah dirawat, dan scalable.
+**Tautan Demo Live:** [rey-porto-cretivox.vercel.app](https://rey-porto-cretivox.vercel.app/login)
 
-## Fitur Utama
+---
 
-Aplikasi ini dilengkapi dengan beberapa fitur esensial yang mendukung fungsionalitas dan aspek estetikanya:
+## 🚀 Fitur Utama & Pemenuhan Tugas (Task)
 
-1. Autentikasi Login
-Halaman depan bertindak sebagai pelindung konten utama. Pengguna diwajibkan memasukkan kredensial yang valid sebelum diberikan izin untuk mengeksplorasi portfolio. Layar login ini terintegrasi langsung dengan verifikasi API pihak ketiga secara real-time.
+Aplikasi ini telah memenuhi seluruh kriteria spesifikasi yang diminta dalam dokumen *Endurance Test*:
 
-2. Landing Page & Portfolio Interaktif
-Setelah berhasil masuk, pengguna disuguhkan dengan konten portfolio utama yang mencakup seksi Hero dengan teks paralaks, teks berjalan otomatis (Marquee Grid), galeri foto dengan aspek rasio sinematik (9:16), seksi informasi biografi, hingga kutipan personal di bagian penutup.
+1. **Personal Branding Page:** Halaman web satu halaman (1-page website) yang dirancang secara mendalam untuk memperkenalkan identitas, keahlian, dan representasi personal.
+2. **Fierce Photo Showcase:** Menampilkan 3 foto ekspresi *FIERCE* dengan variasi sudut pandang (Sisi Depan, Kanan, dan Kiri) menggunakan aset potret beresolusi tinggi dengan aspek rasio 9:16.
+3. **Modern Framework Stack:** Menggunakan **Next.js** (App Router) dengan **TypeScript** untuk memastikan performa maksimal, optimasi SEO, dan pengetikan kode yang aman (*type-safe*).
+4. **Advanced GSAP Animation & Scroll-Triggered:** Memanfaatkan **GSAP (GreenSock Animation Platform)** untuk menciptakan animasi transisi yang halus dan efek interaktif berbasis guliran (*scroll-triggered*) agar website terasa hidup dan sinematik.
+5. **High Interactivity:** Dilengkapi dengan komponen interaktif, efek kursor kustom, efek *marquee*, dan transisi antar-elemen untuk menjaga retensi pengunjung agar betah menjelajahi halaman.
+6. **Live Deployment:** Aplikasi telah dideploy secara publik dan dioptimasi menggunakan platform **Vercel**.
+7. **API Integration (POINT ++):** Mengintegrasikan sistem otentikasi pada halaman login (`/login`) dengan mengonsumsi REST API resmi yang disediakan rekruter melalui dokumentasi Postman.
 
-3. Kursor Kustom Dinamis
-Aplikasi menggantikan kursor bawaan peramban dengan komponen kursor kustom yang terdiri dari titik pusat dan lingkaran pelacak (ring tracking). Lingkaran kursor ini memiliki efek perlambatan (easing) saat mengikuti pergerakan mouse dan akan membesar secara otomatis ketika berada di atas elemen interaktif seperti tombol atau tautan.
+---
 
-4. Animasi Lanjutan dengan GSAP dan ScrollTrigger
-Seluruh seksi di dalam konten utama memanfaatkan pustaka GSAP untuk mengatur urutan kemunculan elemen (staggered animation) saat situs pertama kali dimuat. Selain itu, fitur ScrollTrigger digunakan untuk memicu animasi secara presisi berdasarkan posisi gulir layar pengguna.
+## 📂 Struktur Arsitektur Proyek
 
-5. Lapisan Efek Noise Estetis
-Terdapat overlay tekstur noise menggunakan SVG yang berjalan secara konstan di latar belakang aplikasi. Efek ini memberikan impresi visual yang lebih hidup, analog, dan menyatu dengan tema desain gelap yang diusung.
-
-## Arsitektur Project (Modular Architecture)
-
-Untuk menjaga kebersihan kode dan memudahkan proses kolaborasi atau pengembangan jangka panjang, project ini menerapkan struktur arsitektur berbasis modular (Feature/Component-Based Layout) di dalam App Router Next.js. Pemisahan tugas dilakukan secara ketat dengan pembagian direktori sebagai berikut:
+Proyek ini menerapkan standar arsitektur **Next.js Modular Architecture** yang memisahkan tanggung jawab (*separation of concerns*) setiap lapisan kode, sehingga memudahkan proses *maintenance* dan pengembangan skalabel.
 
 ```text
-src/
-├── app/
-│   ├── globals.css        # Berisi seluruh konfigurasi gaya, variabel warna, efek noise, dan kursor
-│   ├── layout.tsx         # Setup font eksternal (Bebas Neue, Cormorant Garamond, DM Mono) dan pembungkus root
-│   └── page.tsx           # Halaman utama yang mengelola state autentikasi dan inisialisasi urutan animasi
-├── components/
-│   ├── sections/
-│   │   ├── LoginScreen.tsx # Komponen mandiri yang menangani UI dan logika interaksi form login
-│   │   └── MainContent.tsx # Komponen yang menampung seluruh elemen visual portfolio setelah login sukses
-│   └── ui/
-│       └── CustomCursor.tsx # Komponen terisolasi untuk melacak gerakan mouse dan merender kursor kustom
-└── services/
-    └── auth.service.ts    # Lapisan abstraksi data untuk menangani komunikasi HTTP request ke API autentikasi
-```
-## Cara Menjalankan Project
-Ikuti langkah di bawah untuk menjalankan aplikasi di lokal device.
-
-Prasyarat
-Sebelum memulai, pastikan perangkat lunak berikut sudah terinstal di komputer:
-
-Node.js (versi 18.x atau yang lebih baru direkomendasikan)
-npm (bawaan dari Node.js) atau yarn
-
-# Langkah Instalasi
-Ekstrak atau klon repositori project ini ke direktori lokal Anda.
-Buka terminal atau command prompt, lalu arahkan ke folder root project.
-Jalankan perintah berikut untuk menginstal semua pustaka dan dependensi yang diperlukan (termasuk Next.js, GSAP, dan TypeScript):
-
-# bash
-```
-npm run dev
-```
-
-
-buka [http://localhost:3000](http://localhost:3000) dengan browser kamu untuk melihat hasilnya.
+REY_PORTO
+├── src
+│   ├── app/                  # Next.js App Router (Routing, Pages, & Layouts)
+│   ├── components/           # Komponen UI yang reusable (Dapat digunakan kembali)
+│   │   ├── layout/           # Struktur global layout (Navbar, Footer, dll.)
+│   │   ├── sections/         # Potongan section besar untuk 1-page (Hero, About, Photos, dll.)
+│   │   └── ui/               # Komponen UI atomik kecil/interaktif (Cursor, Marquee, Noise)
+│   ├── services/             # Manajemen API Fetching & integrasi endpoint eksternal
+│   ├── types/                # Definisikan interface TypeScript global (index.ts)
+│   └── utils/                # Fungsi pembantu (Helper functions & konfigurasi utilitas)
+├── .gitignore                # Pengecualian file pelacak Git (seperti node_modules)
+├── eslint.config.mjs         # Konfigurasi linter untuk standarisasi kualitas kode
+├── next.config.ts            # Konfigurasi kustom Next.js
+├── package.json              # Daftar dependencies dan scripts proyek
+├── postcss.config.mjs        # Konfigurasi pemrosesan CSS styling
+├── README.md                 # Dokumentasi proyek
+└── tsconfig.json             # Konfigurasi TypeScript compiler
