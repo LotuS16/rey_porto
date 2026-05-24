@@ -6,7 +6,7 @@ Repository ini berisi kode sumber untuk website personal branding/portofolio int
 
 ---
 
-## 🚀 Fitur Utama & Pemenuhan Tugas (Task)
+## Fitur Utama & Pemenuhan Tugas (Task)
 
 Aplikasi ini telah memenuhi seluruh kriteria spesifikasi yang diminta dalam dokumen *Endurance Test*:
 
@@ -20,7 +20,7 @@ Aplikasi ini telah memenuhi seluruh kriteria spesifikasi yang diminta dalam doku
 
 ---
 
-## 📂 Struktur Arsitektur Proyek
+## Struktur Arsitektur Proyek
 
 Proyek ini menerapkan standar arsitektur **Next.js Modular Architecture** yang memisahkan tanggung jawab (*separation of concerns*) setiap lapisan kode, sehingga memudahkan proses *maintenance* dan pengembangan skalabel.
 
