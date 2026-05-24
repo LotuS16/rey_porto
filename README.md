@@ -1,44 +1,41 @@
-# Cretivox Internship Experience - Endurance Test (Front-end Developer)
+# Cretivox Internship Experience — Endurance Test (Front-end Developer)
 
-Repository ini berisi kode sumber untuk website personal branding/portofolio interaktif yang dibangun sebagai pemenuhan tugas **Endurance Test** untuk posisi **Front-end Developer** di Cretivox. Proyek ini berfokus pada performa, animasi modern, interaktivitas, dan integrasi API.
+Di Cretivox, Front-end Developer bukan cuma tentang baris kode atau sekadar menyusun layout yang rapi. Front-end adalah wajah dari seluruh produk—titik di mana apa yang dilihat, diklik, dan dirasakan oleh pengguna saling bertemu. 
 
-**Tautan Demo Live:** [rey-porto-cretivox.vercel.app](https://rey-porto-cretivox.vercel.app/login)
+Website ini dibangun bukan sekadar sebagai portofolio formal, melainkan sebuah ruang interaktif, hidup, dan responsif yang merepresentasikan cara gue berpikir, ngoding, sekaligus menuangkan "rasa" terhadap sebuah desain, animasi, dan pengalaman pengguna (*user experience*).
 
----
-
-## Fitur Utama & Pemenuhan Tugas (Task)
-
-Aplikasi ini telah memenuhi seluruh kriteria spesifikasi yang diminta dalam dokumen *Endurance Test*:
-
-1. **Personal Branding Page:** Halaman web satu halaman (1-page website) yang dirancang secara mendalam untuk memperkenalkan identitas, keahlian, dan representasi personal.
-2. **Fierce Photo Showcase:** Menampilkan 3 foto ekspresi *FIERCE* dengan variasi sudut pandang (Sisi Depan, Kanan, dan Kiri) menggunakan aset potret beresolusi tinggi dengan aspek rasio 9:16.
-3. **Modern Framework Stack:** Menggunakan **Next.js** (App Router) dengan **TypeScript** untuk memastikan performa maksimal, optimasi SEO, dan pengetikan kode yang aman (*type-safe*).
-4. **Advanced GSAP Animation & Scroll-Triggered:** Memanfaatkan **GSAP (GreenSock Animation Platform)** untuk menciptakan animasi transisi yang halus dan efek interaktif berbasis guliran (*scroll-triggered*) agar website terasa hidup dan sinematik.
-5. **High Interactivity:** Dilengkapi dengan komponen interaktif, efek kursor kustom, efek *marquee*, dan transisi antar-elemen untuk menjaga retensi pengunjung agar betah menjelajahi halaman.
-6. **Live Deployment:** Aplikasi telah dideploy secara publik dan dioptimasi menggunakan platform **Vercel**.
-7. **API Integration (POINT ++):** Mengintegrasikan sistem otentikasi pada halaman login (`/login`) dengan mengonsumsi REST API resmi yang disediakan rekruter melalui dokumentasi Postman.
+**Live Link:** [rey-porto-cretivox.vercel.app](https://rey-porto-cretivox.vercel.app/login)
 
 ---
 
-## Struktur Arsitektur Proyek
+## Eksplorasi Fitur & Pemenuhan Tantangan
 
-Proyek ini menerapkan standar arsitektur **Next.js Modular Architecture** yang memisahkan tanggung jawab (*separation of concerns*) setiap lapisan kode, sehingga memudahkan proses *maintenance* dan pengembangan skalabel.
+Seluruh komponen dalam proyek ini dirancang agar terasa *smooth*, interaktif, dan memiliki alur cerita (*engaging*) untuk membuat pengunjung betah mengeksplorasi halaman:
+
+1. **Personal Website (The Core Identity):** Halaman tunggal yang didedikasikan penuh untuk mengenalkan identitas, karakter, keahlian, dan sudut pandang visual gue.
+2. **Fierce Dynamic Showcase:** Ruang visual yang menampilkan 3 foto ekspresi *FIERCE* (Sisi Depan, Kanan, dan Kiri) dalam aspek rasio potret 9:16, diintegrasikan secara presisi agar menyatu dengan sinematik halaman.
+3. **Fluid Animation (GSAP & ScrollTrigger):** Implementasi animasi tingkat lanjut menggunakan GSAP agar transisi elemen tidak kaku. Setiap guliran (*scroll*) memicu interaksi visual yang natural dan dinamis.
+4. **Micro-Interactions:** Penyematan detail kecil seperti efek kustom kursor pelacak, grain/noise latar belakang, serta teks berjalan (*marquee*) untuk memperkuat kesan premium dan eksperimental.
+5. **Robust Integration (Bonus Point ++):** Mengintegrasikan alur masuk halaman lewat REST API Login pada *endpoint* resmi yang disediakan tim rekruter via Postman, memisahkan lapisan UI dengan manajemen autentikasi secara aman.
+
+---
+
+## Struktur Arsitektur Kode
+
+Kode di dalam proyek ini disusun menggunakan standar arsitektur modular Next.js (App Router) dengan TypeScript. Pemisahan folder dilakukan secara ketat berdasarkan fungsinya agar kode tetap bersih (*clean code*), mudah dirawat, dan skalabel:
 
 ```text
 REY_PORTO
 ├── src
-│   ├── app/                  # Next.js App Router (Routing, Pages, & Layouts)
-│   ├── components/           # Komponen UI yang reusable (Dapat digunakan kembali)
-│   │   ├── layout/           # Struktur global layout (Navbar, Footer, dll.)
-│   │   ├── sections/         # Potongan section besar untuk 1-page (Hero, About, Photos, dll.)
-│   │   └── ui/               # Komponen UI atomik kecil/interaktif (Cursor, Marquee, Noise)
-│   ├── services/             # Manajemen API Fetching & integrasi endpoint eksternal
-│   ├── types/                # Definisikan interface TypeScript global (index.ts)
-│   └── utils/                # Fungsi pembantu (Helper functions & konfigurasi utilitas)
-├── .gitignore                # Pengecualian file pelacak Git (seperti node_modules)
-├── eslint.config.mjs         # Konfigurasi linter untuk standarisasi kualitas kode
-├── next.config.ts            # Konfigurasi kustom Next.js
-├── package.json              # Daftar dependencies dan scripts proyek
-├── postcss.config.mjs        # Konfigurasi pemrosesan CSS styling
-├── README.md                 # Dokumentasi proyek
-└── tsconfig.json             # Konfigurasi TypeScript compiler
+│   ├── app/                  # Router utama Next.js (Logika halaman /login & halaman utama)
+│   ├── components/           # Komponen UI modular yang reusable
+│   │   ├── layout/           # Struktur makro global (Navbar dengan Logo Cretivox, Footer)
+│   │   ├── sections/         # Bagian utama satu halaman (Hero, About, Photo Showcase)
+│   │   └── ui/               # Komponen mikro/interaktif (Cursor Tracker, Marquee, Noise Effect)
+│   ├── services/             # Isolasi logika pemanggilan API eksternal (Auth/Login handler)
+│   ├── types/                # Definisi tipe data TypeScript global demi keamanan kode
+│   └── utils/                # Fungsi pembantu eksternal (Helper & utility configs)
+├── public/                   # Aset statis (Logo Cretivox PNG, File Foto Eksperimental)
+├── next.config.ts            # Konfigurasi Next.js Compiler
+├── package.json              # Manajemen package dependency & skrip proyek
+└── tsconfig.json             # Konfigurasi compiler TypeScript
