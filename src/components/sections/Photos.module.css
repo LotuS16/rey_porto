@@ -1,0 +1,108 @@
+.section { padding: 120px 48px 140px; }
+
+.header {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     baseline;
+  margin-bottom:   80px;
+}
+
+.num {
+  font-family:    var(--font-mono), monospace;
+  font-size:      10px;
+  color:          var(--gold);
+  letter-spacing: 0.18em;
+}
+
+.title {
+  font-family: var(--font-bebas), sans-serif;
+  font-size:   clamp(44px, 7.5vw, 100px);
+  color:       var(--cream);
+  line-height: 0.88;
+  text-align:  right;
+}
+
+.grid {
+  display:               grid;
+  grid-template-columns: 1.2fr 0.85fr 1fr;
+  gap:                   18px;
+  align-items:           start;
+}
+
+.col:nth-child(2) { margin-top: 100px; }
+.col:nth-child(3) { margin-top: -48px; }
+
+.frame {
+  aspect-ratio: 9 / 16;
+  background:   #141310;
+  position:     relative;
+  overflow:     hidden;
+  cursor:       none;
+}
+
+.hoverLabel {
+  position:       absolute;
+  bottom:         0;
+  left:           0;
+  right:          0;
+  padding:        20px;
+  background:     linear-gradient(transparent, rgba(8, 8, 7, 0.9));
+  font-family:    var(--font-bebas), sans-serif;
+  font-size:      22px;
+  letter-spacing: 0.08em;
+  color:          var(--cream);
+  transform:      translateY(100%);
+  transition:     transform 0.4s ease;
+  z-index:        2;
+}
+
+.frame:hover .hoverLabel { transform: translateY(0); }
+.frame:hover img          { transform: scale(1.06) !important; }
+.frame img                { transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }
+
+.placeholder {
+  position:        absolute;
+  inset:           0;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  gap:             18px;
+  z-index:         1;
+}
+
+.placeholderRing {
+  width:           56px;
+  height:          56px;
+  border:          1px solid var(--muted);
+  border-radius:   50%;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+}
+
+.placeholderText {
+  font-family:    var(--font-mono), monospace;
+  font-size:      9px;
+  letter-spacing: 0.15em;
+  color:          var(--muted);
+  text-transform: uppercase;
+  text-align:     center;
+  line-height:    1.8;
+}
+
+.caption {
+  margin-top:     14px;
+  font-family:    var(--font-mono), monospace;
+  font-size:      9px;
+  letter-spacing: 0.16em;
+  color:          var(--muted);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .section          { padding: 80px 24px 100px; }
+  .grid             { grid-template-columns: 1fr; gap: 32px; }
+  .col:nth-child(2),
+  .col:nth-child(3) { margin-top: 0; }
+}
