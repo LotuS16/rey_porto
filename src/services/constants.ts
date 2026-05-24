@@ -7,7 +7,10 @@ import type { PhotoItem, StatItem } from '@/types'
 export const SITE = {
   /** Nama lo — muncul di navbar, hero, dan footer */
   name: 'Renaldo Yosia',
-  
+
+  /** Path logo Cretivox di folder /public/ */
+  logoSrc: '/photos/cretivox.png',
+
   /** Tagline di bawah nama hero */
   tagline: ['Creative. Fearless.', 'Born to make things', 'unforgettable.'],
 
