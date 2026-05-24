@@ -11,10 +11,10 @@ export default function Navbar() {
         <Image 
           src={SITE.logoSrc} 
           alt="Cretivox Logo" 
-          width={120}          // Sesuaikan lebar ideal logo (dalam pixel)
-          height={30}          // Sesuaikan tinggi ideal logo (dalam pixel)
+          width={120}          
+          height={30}          
           className={styles.logoImage}
-          priority             // Priority digunakan karena logo berada di atas (LCP)
+          priority             
         />
       </div>
       <span className={styles.pill}>Cretivox Intern ↗</span>

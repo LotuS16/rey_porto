@@ -10,16 +10,14 @@
   z-index:         200;
 }
 
-/* Pembungkus Logo */
 .logoWrapper {
   display:     flex;
   align-items: center;
 }
 
-/* Mengatur agar gambar logo tetap tajam dan proporsional */
 .logoImage {
   width:      auto; 
-  height:     24px; /* Kamu bisa atur tinggi logo di sini sesuai estetika website */
+  height:     24px; 
   object-fit: contain;
 }
 
@@ -37,7 +35,7 @@
   .nav  { padding: 20px 24px; }
   .pill { display: none; }
   
-  /* Opsional: Mengecilkan sedikit ukuran logo di HP jika terlalu besar */
+  
   .logoImage {
     height: 20px;
   }
@@ -47,6 +45,5 @@
   width:      auto;
   height:     24px;
   object-fit: contain;
-  /* Menambah shadow untuk memperjelas logo di atas background yang mirip */
   filter:     drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.5));
 }

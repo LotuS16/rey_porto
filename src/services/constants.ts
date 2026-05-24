@@ -5,7 +5,7 @@ import type { PhotoItem, StatItem } from '@/types'
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const SITE = {
-  /** Nama lo — muncul di navbar, hero, dan footer */
+  /** Nama di navbar, hero, dan footer */
   name: 'Renaldo Yosia',
 
   /** Path logo Cretivox di folder /public/ */
@@ -17,7 +17,7 @@ export const SITE = {
   /** Badge lokasi di hero */
   location: 'Tegal · Indonesia · 2026',
 
-  /** Bio di section About — boleh pakai tag <strong> */
+  /** Bio di section About */
   bio: 'Gue adalah <strong>kreator yang percaya</strong> bahwa setiap karya harus punya nyawa. Bukan cuma estetik — tapi <strong>berasa, nyentuh, dan ninggalin bekas.</strong>',
 
   /** Quote personal */
