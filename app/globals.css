@@ -1,9 +1,10 @@
 :root {
-  --bg:     #080807;
-  --cream:  #f0e6d0;
-  --gold:   #c8a055;
-  --muted:  #5a5248;
-  --red:    #e85d35;
+  /* ─── Light cream theme ─────────────────────────────── */
+  --bg:     #f4efe6;   
+  --cream:  #1c1814;   
+  --gold:   #9a7a2e;   
+  --muted:  #8a7e6e;   
+  --red:    #c94a1e;   
 
   --font-bebas:  var(--font-bebas-neue);
   --font-serif:  var(--font-cormorant);
@@ -30,17 +31,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Noise overlay ────────────────────────────────────────── */
+/* ─── Noise overlay ────────────────────────────────────── */
 .noise-overlay {
   position:        fixed;
   inset:           0;
   pointer-events:  none;
   z-index:         500;
-  opacity:         0.035;
+  opacity:         0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ─── Custom cursor ────────────────────────────────────────── */
+/* ─── Custom cursor ────────────────────────────────────── */
 .cursor {
   position:       fixed;
   width:          8px;
@@ -70,7 +71,7 @@ body {
   height: 60px;
 }
 
-/* ─── Marquee keyframe ─────────────────────────────────────── */
+/* ─── Marquee keyframe ─────────────────────────────────── */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }

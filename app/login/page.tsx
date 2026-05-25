@@ -8,37 +8,46 @@ import { useAuth } from '@/utils/useAuth'
 import styles from './login.module.css'
 
 export default function LoginPage() {
-  const router  = useRouter()
-  const { login } = useAuth()
-  const pageRef = useRef<HTMLElement>(null)
+  const router     = useRouter()
+  const { login, user, loading } = useAuth()
+  const pageRef    = useRef<HTMLElement>(null)
 
   const [username, setUsername] = useState('emilys')
   const [password, setPassword] = useState('emilyspass')
   const [error,    setError]    = useState('')
-  const [loading,  setLoading]  = useState(false)
+  const [pending,  setPending]  = useState(false)
 
-  // Fade IN saat halaman login pertama kali muncul
+  // Kalau sudah login, langsung redirect ke home — tidak bisa kembali ke login
   useEffect(() => {
-    gsap.from(pageRef.current, {
-      opacity:  0,
-      duration: 0.8,
-      ease:     'power2.out',
-    })
-  }, [])
+    if (!loading && user) {
+      router.replace('/')
+    }
+  }, [loading, user, router])
+
+  // Fade IN saat halaman login muncul
+  useEffect(() => {
+    if (!loading && !user) {
+      gsap.from(pageRef.current, {
+        opacity:  0,
+        duration: 0.8,
+        ease:     'power2.out',
+      })
+    }
+  }, [loading, user])
 
   async function handleLogin() {
     if (!username || !password) {
       setError('⚠ Isi username dan password dulu.')
       return
     }
-    setLoading(true)
+    setPending(true)
     setError('')
 
     try {
-      const user = await loginUser({ username, password })
-      login(user)
+      const userData = await loginUser({ username, password })
+      login(userData)
 
-      // Fade OUT dulu, baru pindah halaman
+      // Fade OUT sebelum pindah halaman
       gsap.to(pageRef.current, {
         opacity:    0,
         duration:   0.7,
@@ -47,13 +56,16 @@ export default function LoginPage() {
       })
     } catch (err: unknown) {
       setError('⚠ ' + (err instanceof Error ? err.message : 'Login gagal.'))
-      setLoading(false)
+      setPending(false)
     }
   }
 
   function onKeyDown(e: KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter') handleLogin()
   }
+
+  // Jangan render form kalau sedang cek auth / sudah login
+  if (loading || user) return null
 
   return (
     <main ref={pageRef} className={styles.page}>
@@ -91,8 +103,8 @@ export default function LoginPage() {
           />
         </div>
 
-        <button className={styles.btn} onClick={handleLogin} disabled={loading}>
-          {loading ? 'VERIFYING…' : 'ACCESS GRANTED →'}
+        <button className={styles.btn} onClick={handleLogin} disabled={pending}>
+          {pending ? 'VERIFYING…' : 'ACCESS GRANTED →'}
         </button>
 
         {error && <p className={styles.error}>{error}</p>}

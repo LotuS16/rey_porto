@@ -1,16 +1,17 @@
 .footer {
   padding:         80px 48px 52px;
-  border-top:      1px solid rgba(90, 82, 72, 0.25);
+  border-top:      1px solid rgba(28, 24, 20, 0.12);
   display:         flex;
   justify-content: space-between;
   align-items:     flex-end;
 }
 
+/* Ghost text — stroke disesuaikan untuk bg terang */
 .ghost {
   font-family:         var(--font-bebas), sans-serif;
   font-size:           clamp(48px, 10vw, 140px);
   color:               transparent;
-  -webkit-text-stroke: 1px rgba(240, 230, 208, 0.06);
+  -webkit-text-stroke: 1px rgba(28, 24, 20, 0.07);
   line-height:         0.85;
   user-select:         none;
   white-space:         pre-line;

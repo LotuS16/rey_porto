@@ -8,6 +8,7 @@
   overflow:        hidden;
 }
 
+/* Ghost word — stroke disesuaikan untuk bg terang */
 .bgWord {
   position:            absolute;
   top:                 50%;
@@ -16,7 +17,7 @@
   font-family:         var(--font-bebas), sans-serif;
   font-size:           clamp(200px, 28vw, 400px);
   color:               transparent;
-  -webkit-text-stroke: 1px rgba(200, 160, 85, 0.07);
+  -webkit-text-stroke: 1px rgba(28, 24, 20, 0.06);
   pointer-events:      none;
   white-space:         nowrap;
   letter-spacing:      -0.02em;

@@ -1,14 +1,13 @@
-.wrap {
-  overflow:      hidden;
-  padding:       52px 0;
-  border-top:    1px solid rgba(90, 82, 72, 0.25);
-  border-bottom: 1px solid rgba(90, 82, 72, 0.25);
-}
-
-/* Keyframe harus didefinisikan di dalam module ini sendiri */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
+}
+
+.wrap {
+  overflow:      hidden;
+  padding:       52px 0;
+  border-top:    1px solid rgba(28, 24, 20, 0.1);
+  border-bottom: 1px solid rgba(28, 24, 20, 0.1);
 }
 
 .track {
@@ -23,19 +22,7 @@
   padding:             0 48px;
   letter-spacing:      0.04em;
   color:               transparent;
-  -webkit-text-stroke: 1px rgba(200, 160, 85, 0.28);
-}
-
-.word:nth-child(even) {
-  color:               var(--gold);
-  -webkit-text-stroke: none;
-  padding:             0 20px;
-  font-size:           52px;
-}
-
-@media (max-width: 768px) {
-  .word              { font-size: 48px; }
-  .word:nth-child(even) { font-size: 36px; }
+  -webkit-text-stroke: 1px rgba(28, 24, 20, 0.2);
 }
 
 .star {
@@ -44,4 +31,9 @@
   padding:     0 20px;
   align-self:  center;
   line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .word { font-size: 48px; }
+  .star { font-size: 36px; }
 }

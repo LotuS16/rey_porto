@@ -3,22 +3,27 @@
   top:             0;
   left:            0;
   right:           0;
-  padding:         28px 48px;
+  padding:         20px 48px;
   display:         flex;
   justify-content: space-between;
   align-items:     center;
   z-index:         200;
+  /* Subtle border bawah supaya navbar tidak melebur ke konten */
+  border-bottom:   1px solid rgba(28, 24, 20, 0.08);
+  background:      rgba(244, 239, 230, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.logoWrapper {
+.logoWrap {
   display:     flex;
   align-items: center;
 }
 
-.logoImage {
-  width:      auto; 
-  height:     24px; 
-  object-fit: contain;
+.right {
+  display:     flex;
+  align-items: center;
+  gap:         16px;
 }
 
 .pill {
@@ -27,23 +32,37 @@
   letter-spacing: 0.18em;
   color:          var(--gold);
   text-transform: uppercase;
-  border:         1px solid var(--muted);
+  border:         1px solid rgba(154, 122, 46, 0.35);
   padding:        7px 14px;
 }
 
-@media (max-width: 640px) {
-  .nav  { padding: 20px 24px; }
-  .pill { display: none; }
-  
-  
-  .logoImage {
-    height: 20px;
-  }
+.logoutBtn {
+  display:        flex;
+  align-items:    center;
+  gap:            8px;
+  background:     transparent;
+  border:         1px solid transparent;
+  padding:        7px 14px;
+  cursor:         none;
+  font-family:    var(--font-mono), monospace;
+  font-size:      9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color:          var(--muted);
+  transition:     color 0.3s, border-color 0.3s;
 }
 
-.logoImage {
-  width:      auto;
-  height:     24px;
-  object-fit: contain;
-  filter:     drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.5));
+.logoutBtn:hover {
+  color:        var(--red);
+  border-color: var(--red);
+}
+
+.logoutBtn svg { flex-shrink: 0; transition: stroke 0.3s; }
+.logoutBtn:hover svg { stroke: var(--red); }
+
+@media (max-width: 640px) {
+  .nav             { padding: 16px 24px; }
+  .pill            { display: none; }
+  .logoutBtn span  { display: none; }
+  .logoutBtn       { padding: 7px; border-color: var(--muted); }
 }

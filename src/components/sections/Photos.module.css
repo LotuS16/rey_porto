@@ -34,19 +34,20 @@
 
 .frame {
   aspect-ratio: 9 / 16;
-  background:   #141310;
+  background:   #ddd8ce;
   position:     relative;
   overflow:     hidden;
   cursor:       none;
 }
 
+/* Hover label — gradient disesuaikan untuk bg terang */
 .hoverLabel {
   position:       absolute;
   bottom:         0;
   left:           0;
   right:          0;
   padding:        20px;
-  background:     linear-gradient(transparent, rgba(8, 8, 7, 0.9));
+  background:     linear-gradient(transparent, rgba(244, 239, 230, 0.92));
   font-family:    var(--font-bebas), sans-serif;
   font-size:      22px;
   letter-spacing: 0.08em;
